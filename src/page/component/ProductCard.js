@@ -1,9 +1,15 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const ProductCard = ({item}) => {
+    const navigate = useNavigate();
+    const showDetail = () => {
+        navigate(`/product/${item.id}`)
+    }
+
     return (
-        <div>
-            <img src={item?.img} style={{width: "260px"}} />
+        <div className="card-container" onClick={showDetail}>
+            <img src={item?.img} style={{width: "250px"}} />
             <div>{item?.recommend == true ? "추천상품" : ""}</div>
             <div>{item?.title}</div>
             <div>{item?.price}</div>

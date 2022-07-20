@@ -2,6 +2,7 @@
     display: flex;
     justify-content: flex-end;
     margin: 20px;
+    cursor: pointer;
 }
 
 .nav-section {
@@ -21,4 +22,13 @@
 .menu-area {
     display: flex;
     justify-content: center;
+}
+
+.card-container:hover {
+    transform: scale(1.2);
+}
+
+.product-img {
+    display: flex;
+    justify-content: flex-end;
 }
