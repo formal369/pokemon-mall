@@ -8,7 +8,7 @@ const ProductDetail = () => {
     const [product, setProduct] = useState(null);
 
     const getProductDetail = async() => {
-        let url = `http://localhost:5000/products/${id}`;
+        let url = `http://my-json-server.typicode.com/formal369/pokemon-mall/products/${id}`;
         let response = await fetch(url);
         let data = await response.json();
         setProduct(data);
