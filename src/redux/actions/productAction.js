@@ -7,4 +7,13 @@ function getProducts(searchQuery) {
   }
 }
 
-export const productAction = { getProducts }
+function getProductDetail(id) {
+  return async(dispatch, getState) => {
+    let url = `http://my-json-server.typicode.com/formal369/pokemon-mall/products/${id}`;
+    let response = await fetch(url);
+    let data = await response.json();
+    dispatch({ type: "GET_SINGLE_PRODUCT_SUCCESS", payload: {data}})
+  }
+}
+
+export const productAction = { getProducts, getProductDetail }
